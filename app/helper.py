@@ -40,7 +40,9 @@ def preprocess_tweet(tweet):
     return cleaned_tweet
 
 
-def predict(x):
-    y = model.predict([x])
+def predict(cleaned_tweet):
+    cleaned_vec = vectorizer.transform([cleaned_tweet])
+    cleaned_transformed = transformer.transform(cleaned_vec)
+    y = model.predict(cleaned_transformed)
     print(y)
-    return
+    return y[0]
