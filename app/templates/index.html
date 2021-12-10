@@ -11,7 +11,7 @@
 </head>
 <body >
     <div class="container mt-3 pt-3 text-center ">
-        <h1 class="mb-5">Twitter Sentiment Analysis</h1>
+        <h1 class="mb-5 title">Twitter Sentiment Analysis</h1>
         {%if not is_tweet_entered %}
             <form action="/", method="POST">
                 <br>
@@ -36,6 +36,9 @@
             {%else%}
                 <h3 style="color:red">Your Tweet Sentiment is Negative!</h3>
             {%endif%}
+            <form action="/", method="GET">
+                <button class="w-30 btn mt-5  btn-primary" type="submit">Analyse Another Tweet</button>
+            </form>
     {%endif%}
     </div>
 </body>
